@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Page</title>
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Fonteawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      header {
+        margin: auto;
+        text-align: center;
+        height: 250px;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+        background-color: rgb(218,176,213);
+        color: white;
+        
+      }
+      #member-container {
+       background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        display: flex;
+        overflow: hidden;
+        width: 70%;
+        max-width: 1200px;
+        height: auto;
+        position: relative;
+        margin: auto;
+        margin-top: -90px; 
+        z-index: 2;
+        margin-bottom: 2rem;
+    
+       
+      }
+      .card {
+        flex: 0 0 50%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 1rem 2rem;
+        text-align: center;
+        transition: transform 0.3s ease-in-out;
+        padding: 2rem 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+       
+      
+        
+      }
+      .card img {
+        height: 160px;
+        width: 160px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 100%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .Memeber-name {
+        font-weight: bolder;
+        font-size: 1.5rem;
+      }
+      .member-title {
+        font-size: 1rem;
+        color: rgb(218,176,213);
+      }
+      .about-member {
+        margin-top: 0.2rem;
+        color: gray;
+        text-align: center;
+        padding: 0 0.5rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        /* display: none; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 80%;
+        margin-bottom: 1rem;
+      }
+      .icn {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        align-items: center;
+        width: 100%;
+      }
+      .icn i {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color:rgb(218,176,213);
+        transition: color 0.3s;
+      }
+      .card .icn i:hover {
+        color: #007bff;
+      }
+      .navigation {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        pointer-events: none;
+        padding: 0 2rem;
+        
+      }
+      .nav-btn{
+        border: none;
+      background-color: aliceblue;
+      }
+      .nav-btn i {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        padding: 10px;
+        pointer-events: all;
+        color: #007bff;
+        /* border: 1px solid red; */
+      }
+      .nav-btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+      @media (max-width: 1024px) {
+        #member-container {
+          width: 80%;
+        }
+        .card {
+          flex: 0 0 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        header {
+          height: 200px;
+          padding: 1rem;
+        }
+        #member-container {
+          width: 90%;
+          margin-top: -70px;
+        }
+        .card {
+          padding: 1rem 1.5rem;
+        }
+        .Memeber-name {
+          font-size: 1.2rem;
+        }
+        .member-title {
+          font-size: 0.9rem;
+        }
+        .about-member {
+          font-size: 0.9rem;
+        }
+        .icn i {
+          font-size: 1.2rem;
+        }
+        .nav-btn i {
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        header {
+          height: 150px;
+          padding: 0.5rem;
+        }
+        #member-container {
+          width: 95%;
+          margin-top: -50px;
+        }
+        .card {
+          padding: 0.5rem 1rem;
+        }
+        .Memeber-name {
+          font-size: 1rem;
+        }
+        .member-title {
+          font-size: 0.8rem;
+        }
+        .about-member {
+          font-size: 0.8rem;
+        }
+        .icn i {
+          font-size: 1rem;
+        }
+        .nav-btn i {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Meet The Team</h1>
+    
+    </header>
+    <div id="member-container">
+      <div class="card">
+        <img
+          src="https://static-beautyhigh.stylecaster.com/2014/05/477973067.jpg"
+          alt="member-img"
+        />
+        <p class="Memeber-name">Ava Campbell</p>
+        <p class="member-title">Operations Lead</p>
+        <p class="about-member">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed
+          numquam placeat nam laborum a libero vitae ea fugiat sit, voluptate ad
+          iure, nisi ipsam cupiditate recusandae repudiandae eligendi? Iusto?
+        </p>
+        <div class="icn">
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-wordpress"></i>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://watermark.lovepik.com/photo/20220316/large/lovepik-professional-business-woman-office-picture_502367516.jpg"
+          alt="member-img"
+        />
+        <p class="Memeber-name">Mia Wilson</p>
+        <p class="member-title">Team Lead</p>
+        <p class="about-member">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed
+          numquam placeat nam laborum a libero vitae ea fugiat sit, voluptate ad
+          iure, nisi ipsam cupiditate recusandae repudiandae eligendi? Iusto?
+        </p>
+        <div class="icn">
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-wordpress"></i>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://writestylesonline.com/wp-content/uploads/2019/01/What-To-Wear-For-Your-Professional-Profile-Picture-or-Headshot.jpg"
+          alt="member-img"
+        />
+        <p class="Memeber-name">Ella Turner</p>
+        <p class="member-title">Team Lead</p>
+        <p class="about-member">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed
+          numquam placeat nam laborum a libero vitae ea fugiat sit, voluptate ad
+          iure, nisi ipsam cupiditate recusandae repudiandae eligendi? Iusto?
+        </p>
+        <div class="icn">
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-wordpress"></i>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://www.befunky.com/images/wp/wp-2021-01-linkedin-profile-picture-focus-face.jpg?auto=avif,webp&format=jpg&width=944"
+          alt="member-img"
+        />
+        <p class="Memeber-name">Olivia Anderson</p>
+        <p class="member-title">Team Lead</p>
+        <p class="about-member">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo sed
+          numquam placeat nam laborum a libero vitae ea fugiat sit,
+        </p>
+        <div class="icn">
+          <i class="fa-brands fa-github"></i>
+          <i class="fa-brands fa-discord"></i>
+          <i class="fa-brands fa-wordpress"></i>
+        </div>
+      </div>
+      <div class="navigation">
+        <button class="nav-btn" id="prevBtn"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="nav-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        let currentIndex = 0;
+        const $cards = $(".card");
+        const totalCards = $cards.length;
+
+        function updateNavigation() {
+          $("#prevBtn").prop("disabled", currentIndex === 0);
+          $("#nextBtn").prop("disabled", currentIndex === totalCards - 1);
+        }
+
+        function showCard(index) {
+          const offset = -index * 100;
+          $cards.css("transform", `translateX(${offset}%)`);
+          updateNavigation();
+        }
+
+        $("#prevBtn").click(function () {
+          if (currentIndex > 0) {
+            currentIndex--;
+            showCard(currentIndex);
+          }
+        });
+
+        $("#nextBtn").click(function () {
+          if (currentIndex < totalCards - 1) {
+            currentIndex++;
+            showCard(currentIndex);
+          }
+        });
+
+        // Initialize
+        updateNavigation();
+        showCard(currentIndex);
+      });
+    </script>
+  </body>
+</html>

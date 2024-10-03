@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Page</title>
+     <!-- Fonteawesome -->
+     <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"
+   />
+    <style>
+      *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      header{
+        text-align: center;
+        margin: 2rem;
+      }
+      header h1{
+        margin-bottom: 1rem;
+        color: cadetblue;
+      }
+      header p{
+       
+        color:#999;
+      }
+      main {
+        width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin: auto;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+       
+      }
+
+      .card {
+        background-color: transparent;
+        width: 280px;
+        height: 400px;
+        perspective: 1000px;
+        border-radius: 0.5rem;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.9s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        border-radius: 0.5rem;
+      
+      }
+
+      .card:hover .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        background-color: #fff;
+      }
+
+      .card-front {
+        position: relative;
+        color: black;
+      }
+
+      .card-back {
+        top: 0;
+        transform: rotateY(180deg);
+      }
+
+      .cover {
+        width: 100%;
+        height: 110px;
+      }
+      .cover img {
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+      }
+      .user {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translate(-50%);
+        width: 40%;
+        height: 120px;
+        border-radius: 50%;
+        border: 4px solid white;
+      }
+      .user img {
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        object-fit: cover;
+      }
+      .content {
+        margin-top: 3rem;
+        padding: 1rem 1.5rem;
+      }
+      .name {
+        line-height: 28px;
+        font-size: 22px;
+      }
+      .profession {
+        color: #999;
+        font-size: small;
+        margin-top: .5rem;
+      }
+      .text {
+        margin-top: 2rem;
+      }
+      .motto {
+        padding: 0.8rem;
+        margin: 0.6rem 1rem;
+        border-bottom: 1px solid #eee;
+        color: #999;
+      }
+
+      .clickToView{
+        margin-top: .8rem;
+        padding-top: .5rem;
+        border-top: 1px solid #eee;
+        color: #999;
+      }
+      .content2 {
+        padding: 1rem;
+       
+      }
+      .stats-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+     margin-top: 20%;
+      }
+      .stats p{
+        color: #999;
+      }
+      .stats-container .stats:nth-child(2) {
+        padding: 0 0.8rem;
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+      }
+      .social-network{
+        position: absolute;
+        bottom: 0;
+        right: 1rem;
+        left: 1rem;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        color: #999;
+        font-size: large;
+        padding: 1rem ;
+        border-top: 1px solid #eee;
+        
+      }
+      .social-network i{
+        cursor: pointer;
+      }
+
+      @media screen and (min-width: 480px) and (max-width: 768px) {
+        main {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .clickToView{
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: 769px) {
+        main {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .clickToView{
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <header>
+      <h1>This is our awesome team</h1>
+      <p>PRESENT YOUR TEAM IN AN INTERESTING WAY</p>
+    </header>
+    <main>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="cover">
+              <img src="https://picsum.photos/id/10/300/300" />
+            </div>
+            <div class="user">
+              <img
+                class="img-circle"
+                src="https://www.shutterstock.com/image-photo/young-buisnessman-wearing-eyeglasses-jacket-260nw-1713757231.jpg"
+              />
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name">Inna Corman</h3>
+                <p class="profession">Curriculam Manager</p>
+                <p class="text">
+                  "I'm the new Sinatra, and since I made it here I can make it
+                  anywhere, yeah, they love me everywhere"
+                </p>
+              </div>
+              <div class="clickToView">Click To View More</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="header">
+              <h5 class="motto">
+                "To be or not to be, this is my awesome motto!"
+              </h5>
+            </div>
+            <div class="content2">
+              <h4 class="text-center">Job Description</h4>
+              <p class="text-center">
+                Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
+                others...
+              </p>
+              <div class="stats-container">
+                <div class="stats">
+                  <h4>235</h4>
+                  <p>Followers</p>
+                </div>
+                <div class="stats">
+                  <h4>114</h4>
+                  <p>Following</p>
+                </div>
+                <div class="stats">
+                  <h4>35</h4>
+                  <p>Projects</p>
+                </div>
+              </div>
+              <div class="social-network">
+              
+                  <i class="fa-brands fa-facebook"></i>
+             
+                
+                  <i class="fa-brands fa-google-plus-g"></i>
+                
+                
+                  <i class="fa-brands fa-twitter"></i>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="cover">
+              <img src="https://picsum.photos/id/11/300/300" />
+            </div>
+            <div class="user">
+              <img
+                class="img-circle"
+                src="https://t4.ftcdn.net/jpg/04/43/25/95/360_F_443259545_PsPbDmm8HY7JLQU9Ew9DPOdAHtIhMtnD.jpg"
+              />
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name">halye torkn</h3>
+                <p class="profession">Product Manager</p>
+                <p class="text">
+                  "I'm the new Sinatra, and since I made it here I can make it
+                  anywhere, yeah, they love me everywhere"
+                </p>
+              </div>
+              <div class="clickToView">Click To View More</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="header">
+              <h5 class="motto">
+                "To be or not to be, this is my awesome motto!"
+              </h5>
+            </div>
+            <div class="content2">
+              <h4 class="text-center">Job Description</h4>
+              <p class="text-center">
+                Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
+                others...
+              </p>
+              <div class="stats-container">
+                <div class="stats">
+                  <h4>235</h4>
+                  <p>Followers</p>
+                </div>
+                <div class="stats">
+                  <h4>114</h4>
+                  <p>Following</p>
+                </div>
+                <div class="stats">
+                  <h4>35</h4>
+                  <p>Projects</p>
+                </div>
+              </div>
+              <div class="social-network">
+              
+                  <i class="fa-brands fa-facebook"></i>
+             
+                
+                  <i class="fa-brands fa-google-plus-g"></i>
+                
+                
+                  <i class="fa-brands fa-twitter"></i>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">
+            <div class="cover">
+              <img src="https://picsum.photos/id/20/300/300" />
+            </div>
+            <div class="user">
+              <img
+                class="img-circle"
+                src="https://img.freepik.com/premium-photo/i-love-what-i-cropped-portrait-attractive-young-businesswoman-working-her-laptop-while-sitting-office_590464-62606.jpg?size=626&ext=jpg&ga=GA1.1.2113030492.1720051200&semt=sph"
+              />
+            </div>
+            <div class="content">
+              <div class="main">
+                <h3 class="name">Jene fenn</h3>
+                <p class="profession">Operation Manager</p>
+                <p class="text">
+                  "I'm the new Sinatra, and since I made it here I can make it
+                  anywhere, yeah, they love me everywhere"
+                </p>
+              </div>
+              <div class="clickToView">Click To View More</div>
+            </div>
+          </div>
+          <div class="card-back">
+            <div class="header">
+              <h5 class="motto">
+                "To be or not to be, this is my awesome motto!"
+              </h5>
+            </div>
+            <div class="content2">
+              <h4 class="text-center">Job Description</h4>
+              <p class="text-center">
+                Web design, Adobe Photoshop, HTML5, CSS3, Corel and many
+                others...
+              </p>
+              <div class="stats-container">
+                <div class="stats">
+                  <h4>235</h4>
+                  <p>Followers</p>
+                </div>
+                <div class="stats">
+                  <h4>114</h4>
+                  <p>Following</p>
+                </div>
+                <div class="stats">
+                  <h4>35</h4>
+                  <p>Projects</p>
+                </div>
+              </div>
+              <div class="social-network">
+              
+                  <i class="fa-brands fa-facebook"></i>
+             
+                
+                  <i class="fa-brands fa-google-plus-g"></i>
+                
+                
+                  <i class="fa-brands fa-twitter"></i>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
